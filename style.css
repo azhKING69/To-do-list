@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+*{
+    font-family: "Lexend", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    color:rgb(198, 59, 9);
+}
+
+.title{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 23px;
+}
+
+h1{
+    color: tomato;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 60px;
+    padding: 10px;
+    margin:2% 20%;
+    background-color:#ececec;
+}
+
+.box{
+    width:75%;
+    padding: 5px;
+    margin:5px 0px;
+    font-size: 20px;
+    color: black;
+}
+body{
+    background-color:#093c5a;
+}
+#btn{
+    background-color: rgb(43, 111, 213);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor:pointer;
+    width:18%;
+    font-size:20px
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px;
+    height: 30px;
+    font-size: 15px;
+    background-color: aqua;
+    border-radius: 5px;
+    color: black;
+}
+
+.task p{
+    color: black;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.task-text{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+}
+
+.alltasks{
+    margin:0% 25%;
+}
+.edit, .delete, .done{
+    font-size: 25px;
+    background: none;
+    border: none;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+/* Animation for a newly added task (slide in from the left) */
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animation only when the .new class is present */
+  .task.new {
+    animation: slideIn 0.5s forwards;
+  }
+  
+  /* Animation for deletion: slide out to the right and fade out */
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Apply deletion animation when the .deleting class is added */
+  .task.deleting {
+    animation: slideOut 0.5s forwards;
+  }
+  
+  /* Style for completed tasks */
+  .task.completed {
+    background-color: rgba(0, 255, 255,0.8);
+    text-decoration: line-through;
+  }
+  
+
